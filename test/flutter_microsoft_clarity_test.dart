@@ -10,7 +10,7 @@ class MockFlutterMicrosoftClarityPlatform
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  Future init({required String projectID}) {
+  Future init({required String projectID, required String userID}) {
     throw UnimplementedError();
   }
 }

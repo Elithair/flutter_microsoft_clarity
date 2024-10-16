@@ -12,9 +12,17 @@ public class FlutterMicrosoftClarityPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if call.method == "init" {
             if let args = call.arguments as? [String: Any],
-               let projectId = args["projectID"] as? String {
+                let projectId = args["projectID"] as? String {
+                 // Obtenha o userId se estiver presente
+                let userId = args["userId"] as? String
                 // Inicialize o Microsoft Clarity aqui
-                let clarityConfig = ClarityConfig(projectId: projectId)
+                 let clarityConfig: ClarityConfig
+            if let userId = userId {
+                clarityConfig = ClarityConfig(projectId: projectId, userId: userId, enableSwiftUI_Experimental: true)
+            } else {
+                clarityConfig = ClarityConfig(projectId: projectId, enableSwiftUI_Experimental: true)
+            }
+            ClaritySDK.initialize(config: clarityConfig)
                 ClaritySDK.initialize(config: clarityConfig)
 
                 result(true)

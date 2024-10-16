@@ -5,8 +5,8 @@ class FlutterMicrosoftClarity {
     return FlutterMicrosoftClarityPlatform.instance.getPlatformVersion();
   }
 
-  Future<void> init({String? projectId}) async {
+  Future<void> init({String? projectId, String? userId}) async {
     return FlutterMicrosoftClarityPlatform.instance
-        .init(projectID: projectId ?? "");
+        .init(projectID: projectId ?? "", userID: userId ?? "");
   }
 }

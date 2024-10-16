@@ -28,7 +28,7 @@ abstract class FlutterMicrosoftClarityPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future init({required String projectID}) {
+  Future init({required String projectID, required String userID}) {
     throw UnimplementedError(
         'clarity initialisation has not been implemented.');
   }

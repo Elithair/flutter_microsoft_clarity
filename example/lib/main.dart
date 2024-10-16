@@ -6,7 +6,7 @@ import 'package:flutter_microsoft_clarity/flutter_microsoft_clarity.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  FlutterMicrosoftClarity().init(projectId: 'och90vrksg');
+  FlutterMicrosoftClarity().init(projectId: 'och90vrksg', userId: 'cesarmod');
   runApp(const MyApp());
 }
 

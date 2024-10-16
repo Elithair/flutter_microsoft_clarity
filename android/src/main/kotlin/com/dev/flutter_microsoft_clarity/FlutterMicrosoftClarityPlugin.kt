@@ -25,11 +25,16 @@ class FlutterMicrosoftClarityPlugin: FlutterPlugin, MethodCallHandler, ActivityA
         if (call.method == "getPlatformVersion") {
             result.success("Android ${android.os.Build.VERSION.RELEASE}")
         } else if (call.method == "init") {
-            val productId: String? = call.argument<String>("projectID")
+            val projectId: String? = call.argument<String>("projectID")
+            val userId: String? = call.argument<String>("userID") // Adiciona o userId como argumento
 
-            if (productId != null) {
-                val config = ClarityConfig(productId)
-                Clarity.initialize(currentActivity, config)
+            if (projectId != null) {
+                val config = if (userId != null) {
+                ClarityConfig(projectId, userId) // Passa o userId se não for nulo
+            } else {
+                ClarityConfig(projectId) // Não passa o userId se for nulo
+            }
+            Clarity.initialize(currentActivity, config)
             } else {
                 result.error(
                     "PRODUCT_ID_NULL",

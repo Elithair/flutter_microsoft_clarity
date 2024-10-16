@@ -18,8 +18,8 @@ class MethodChannelFlutterMicrosoftClarity
   }
 
   @override
-  Future init({required String projectID}) async {
-    return await methodChannel
-        .invokeMethod('init', <String, dynamic>{'projectID': projectID});
+  Future init({required String projectID, required String userID}) async {
+    return await methodChannel.invokeMethod(
+        'init', <String, dynamic>{'projectID': projectID, 'userID': userID});
   }
 }
