@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import Clarity 
+import Clarity
 
 public class FlutterMicrosoftClarityPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -16,11 +16,13 @@ public class FlutterMicrosoftClarityPlugin: NSObject, FlutterPlugin {
                 // Inicialize o Microsoft Clarity aqui
                 let clarityConfig = ClarityConfig(projectId: projectId)
                 ClaritySDK.initialize(config: clarityConfig)
-              
+
                 result(true)
             } else {
                 result(FlutterError(code: "INVALID_ARGUMENT", message: "Project ID is required", details: nil))
             }
+       } else if call.method == "getPlatformVersion" {
+            result("iOS " + UIDevice.current.systemVersion)
         } else {
             result(FlutterMethodNotImplemented)
         }
