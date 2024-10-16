@@ -14,7 +14,7 @@ public class FlutterMicrosoftClarityPlugin: NSObject, FlutterPlugin {
             if let args = call.arguments as? [String: Any],
                 let projectId = args["projectID"] as? String {
                  // Obtenha o userId se estiver presente
-                let userId = args["userId"] as? String
+                let userId = args["userID"] as? String
                 // Inicialize o Microsoft Clarity aqui
                  let clarityConfig: ClarityConfig
             if let userId = userId {
