@@ -1,11 +1,11 @@
 name: flutter_microsoft_clarity
 description: "A Flutter plugin for integrating Microsoft Clarity analytics into your application."
 version: 1.0.0
-homepage: https://github.com/cesarmod2017/flutter_microsoft_clarity
+homepage: https://github.com/Elithair/flutter_microsoft_clarity
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.4.3 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -15,7 +15,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   plugin:
