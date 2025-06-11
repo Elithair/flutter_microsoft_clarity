@@ -25,7 +25,6 @@ public class FlutterMicrosoftClarityPlugin: NSObject, FlutterPlugin {
                     clarityConfig = ClarityConfig(projectId: projectId)
                 }
                 ClaritySDK.initialize(config: clarityConfig)
-                ClaritySDK.initialize(config: clarityConfig)
 
                 result(true)
             } else {
