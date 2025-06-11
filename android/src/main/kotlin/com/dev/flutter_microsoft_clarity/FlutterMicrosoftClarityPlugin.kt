@@ -36,11 +36,11 @@ class FlutterMicrosoftClarityPlugin : FlutterPlugin, MethodCallHandler, Activity
                 if (projectId != null) {
                     val config = if (userId != null) {
                         ClarityConfig(
-                            projectId, userId, logLevel = LogLevel.Verbose
+                            projectId, userId, logLevel = LogLevel.None
                         ) // Passa o userId se não for nulo
                     } else {
                         ClarityConfig(
-                            projectId, logLevel = LogLevel.Verbose
+                            projectId, logLevel = LogLevel.None
                         ) // Não passa o userId se for nulo
                     }
                     Clarity.initialize(currentActivity, config)
